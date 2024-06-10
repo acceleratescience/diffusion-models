@@ -9,8 +9,8 @@
 [![GPL License][license-shield]][license-url] -->
 [![GPLv3 License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/)
 [![Issues](https://img.shields.io/github/issues-raw/acceleratescience/diffusion-models.svg?maxAge=25000)](https://github.com/acceleratescience/diffusion-models/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/acceleratescience/diffusion-models.svg?style=flat)]()
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/acceleratescience/diffusion-models.svg?style=flat)]()
+[![GitHub contributors](https://img.shields.io/github/contributors/acceleratescience/diffusion-models.svg?style=flat)](https://github.com/acceleratescience/diffusion-models/graphs/contributors)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/acceleratescience/diffusion-models.svg?style=flat)](https://github.com/acceleratescience/diffusion-models/pulls)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 <br>
 [![GitHub stars](https://img.shields.io/github/stars/acceleratescience/diffusion-models.svg?style=social&label=Star)]()
