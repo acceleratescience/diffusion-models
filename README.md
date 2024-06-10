@@ -7,7 +7,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![GPL License][license-shield]][license-url] -->
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![GPLv3 License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/)
 [![Issues](https://img.shields.io/github/issues-raw/acceleratescience/diffusion-models.svg?maxAge=25000)](https://github.com/acceleratescience/diffusion-models/issues)
 [![GitHub contributors](https://img.shields.io/github/contributors/acceleratescience/diffusion-models.svg?style=flat)]()
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/acceleratescience/diffusion-models.svg?style=flat)]()
