@@ -29,7 +29,7 @@
     <img src="./docs/imgs/full_acc.png" alt="Logo" height=80>
   </a>
 
-  <h3 align="center">REPO TITLE</h3>
+  <h3 align="center">Introduction to diffusion models in generative AI</h3>
 
   <p align="center">
     REPO DESCRIPTION
