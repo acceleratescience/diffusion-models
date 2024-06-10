@@ -1,0 +1,3 @@
+venv/
+.git/
+.github/workflows/docker-image.yml
