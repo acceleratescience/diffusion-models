@@ -2,9 +2,9 @@
     <img src="./imgs/full_acc.png" alt="Logo" width=500>
   </a>
 
-# COURSE TITLE
+# Introduction to diffusion models in generative AI
 
-Welcome to the material for COURSE NAME.
+Welcome to the material for Introduction to diffusion models in generative AI.
 
 Please check the [official Mkdocs Material documentation](https://squidfunk.github.io/mkdocs-material/) for more information on how to use this template.
 

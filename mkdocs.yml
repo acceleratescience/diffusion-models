@@ -1,6 +1,6 @@
-site_name: SITE NAME
-repo_url: https://github.com/acceleratescience/REPO-TITLE
-site_url: https://acceleratescience.github.io/REPO-TITLE/
+site_name: Introduction to diffusion models in generative AI
+repo_url: https://github.com/acceleratescience/diffusion-models
+site_url: https://acceleratescience.github.io/diffusion-models/
 nav:
   - Home: 
     - Welcome!: index.md
@@ -10,10 +10,10 @@ nav:
   - Multi Page 1:
     - Subpage 1: multi_1/subpage_1.md
     - Subpage 2: multi_1/subpage_2.md
-  - Multi Page 2:
-    - multi_2/index.md
-    - Page 1: multi_2/subpage_1.md
-    - Page 2: multi_2/subpage_2.md
+  - Hugging Face Diffusers:
+    - hf_diffusers/index.md
+    - Image Generation: hf_diffusers/hf_mnist_gen.md
+    - ECG Generation: hf_diffusers/hf_ecg_gen.md
   - Resources:
     - resources/index.md
     - Slides: resources/slides.md
