@@ -85,7 +85,7 @@ class DDPM:
 
         x_ts = []
         for i in tqdm(range(0, self.T)[::-1]):
-            t = torch.full((batch_size,), i-1).to(self.device)
+            t = torch.full((batch_size,), i).to(self.device)
             # t = t.float()
             epsilon_t = self.model(x_t, t.float(), labels)
             x_t = self.reverse(x_t, t, epsilon_t)
