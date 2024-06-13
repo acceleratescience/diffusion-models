@@ -32,12 +32,14 @@
   <h3 align="center">Introduction to diffusion models in generative AI</h3>
 
   <p align="center">
-    REPO DESCRIPTION
+    An introduction to diffusion models and how to apply them in a practical way.
     <br />
-    <a href="https://acceleratescience.github.io/diffusion-models/"><strong>Start the Course »</strong></a>
+    <a href="https://acceleratescience.github.io/diffusion-models/"><strong>Start »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/acceleratescience/diffusion-models/tree/basic">Get Basic Code</a>
+    <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/notebooks">Check out the notebooks</a>
+    ·
+    <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/Slides">Check out the Slides</a>
     ·
     <a href="https://github.com/acceleratescience/diffusion-models/issues">Report Bug</a>
     ·
@@ -101,7 +103,13 @@ mkdocs serve
 
 <!-- GETTING STARTED -->
 ## Prerequisites
-ENTER PREREQUISITES HERE
+Life will be easier if you already have some experience with the following:
+* Probability distributions
+* PyTorch
+* PyTorch Datasets and Dataloaders
+* Convolutional Neural Networks
+* Other neural network components (normalization, activation functions, etc.)
+* Hugging Face Libraries (optional)
 
 
 <!-- CONTRIBUTING -->
