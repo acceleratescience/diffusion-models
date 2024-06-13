@@ -40,7 +40,7 @@
     <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/notebooks">Check out the notebooks</a>
     ·
     <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/Slides">Check out the Slides</a>
-    ·
+    <br />
     <a href="https://github.com/acceleratescience/diffusion-models/issues">Report Bug</a>
     ·
     <a href="https://github.com/acceleratescience/diffusion-models/issues">Request Feature</a>
@@ -53,7 +53,6 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#howrun">How to Run</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -77,29 +76,6 @@
 [Badge Likes]: https://img.shields.io/github/stars/MarkedDown/Buttons?style=for-the-badge&labelColor=d0ab23&color=b0901e&logoColor=white&logo=Trustpilot
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## How to Run
-
-You can simply copy the git repository and install the dependencies with pip in a virtual environment:
-```
-pip install -r requirements.txt
-```
-
-Or you can use Docker. Pull the image from the Accelerate Science Docker Hub repository:
-```
-docker pull acceleratescience/website-pages-template
-```
-To enter the container, run
-```
-docker run -it -p 8080:8080 website-pages-template /bin/bash
-```
-
-I suggest using the VSCode Remote - Containers extension to develop in the container. This will allow you to use the VSCode editor on your local machine while running the code in the container.
-
-To serve locally, run
-```
-mkdocs serve
-```
 
 <!-- GETTING STARTED -->
 ## Prerequisites

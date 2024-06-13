@@ -37,7 +37,7 @@ def get_mnist(batch_size: int = 32) -> DataLoader | DataLoader:
     train_noisy_dataset = MNISTDataset(train_dataset)
     test_noisy_dataset = MNISTDataset(test_dataset)
 
-    train_loader = DataLoader(train_noisy_dataset, batch_size=batch_size, shuffle=True)
+    train_loader = DataLoader(train_noisy_dataset, batch_size=batch_size, shuffle=False)
     test_loader = DataLoader(test_noisy_dataset, batch_size=batch_size, shuffle=False)
 
     return train_loader, test_loader

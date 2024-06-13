@@ -1,4 +1,5 @@
 import torch
+import torch.optim as optim
 import torch.nn.functional as F
 from tqdm import tqdm
 
@@ -23,7 +24,7 @@ class DDPM:
         alpha_bar = torch.cumprod(alpha, dim=0)
         self.sqrt_alpha_bar = torch.sqrt(alpha_bar)
         self.sqrt_one_minus_alpha_bar = torch.sqrt(1 - alpha_bar)
-        self.noise_coefficient = (1- alpha) / self.sqrt_one_minus_alpha_bar
+        self.noise_coefficient = (1 - alpha) / self.sqrt_one_minus_alpha_bar
         self.sqrt_alpha_inv = torch.sqrt(1 / alpha)
         
 
@@ -38,9 +39,9 @@ class DDPM:
             torch.Tensor | torch.Tensor: The output of the forward diffusion process, the noise and
                 the output of the model.
         """
-        t = torch.squeeze(t[0].int())
+        t = t.int()
         noise = torch.randn_like(x_0)
-        xt = self.sqrt_alpha_bar[t] * x_0 + self.sqrt_one_minus_alpha_bar[t] * noise
+        xt = self.sqrt_alpha_bar[t, None, None, None] * x_0 + self.sqrt_one_minus_alpha_bar[t, None, None, None] * noise
         return xt, noise
 
     
@@ -63,7 +64,7 @@ class DDPM:
             return u_t
         else:
             noise = torch.randn_like(x_t)
-            return u_t + torch.sqrt(self.beta[t]) * noise
+            return u_t + torch.sqrt(self.beta[t-1]) * noise
 
 
     @torch.no_grad()
@@ -83,12 +84,12 @@ class DDPM:
         labels[torch.arange(batch_size), label] = 1
 
         x_ts = []
-        for i in tqdm(range(self.T-1, -1, -1)):
+        for i in tqdm(range(0, self.T)[::-1]):
             t = torch.full((batch_size,), i-1).to(self.device)
             # t = t.float()
             epsilon_t = self.model(x_t, t.float(), labels)
             x_t = self.reverse(x_t, t, epsilon_t)
-            x_ts.append(x_t)
+            x_ts.append(x_t.detach().numpy())
 
         return x_ts
     
@@ -119,14 +120,14 @@ class DDPM:
             for images, targets, labels in tqdm(train_loader, desc='Training', total=len(train_loader)):
                 images, targets, labels = images.to(self.device), targets.to(self.device), labels.to(self.device)
                 self.optimizer.zero_grad()
-                t = torch.randint(0, self.T, (batch_size,)).to(self.device)
-
+                t = torch.randint(0, self.T, (batch_size,), device=self.device)
+                t = t.float()
                 loss = self.loss_function(images, t, labels)
                 loss.backward()
                 self.optimizer.step()
 
                 running_loss += loss.item()
-
+                # print(loss.item())
                 losses.append(loss.item())
 
             print(f'Epoch [{epoch+1}/{epochs}], Loss: {running_loss/len(train_loader):.4f}')
