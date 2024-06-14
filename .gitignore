@@ -1,6 +1,4 @@
 /venv
 docs/.DS_Store
-diffusion-models/notebooks/mnist_data/
-diffusion-models/notebooks/ecg/
-diffusion-models/mnist_data
-diffusion-models/__pycache__
+/notebooks/data/
+
