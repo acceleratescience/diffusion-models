@@ -5,7 +5,7 @@
 # Introduction to diffusion models in generative AI
 
 Welcome to the material for Introduction to diffusion models in generative AI.
-
+<!-- 
 Please check the [official Mkdocs Material documentation](https://squidfunk.github.io/mkdocs-material/) for more information on how to use this template.
 
 # Sections
@@ -62,4 +62,4 @@ Please check the [official Mkdocs Material documentation](https://squidfunk.gith
     ---
     Each section contains a summary of further resources, but here they are all collected for convenience
 
-</div>
+</div> -->

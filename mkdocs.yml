@@ -6,18 +6,17 @@ nav:
     - Welcome!: index.md
     - License: Home/LICENSE.md
     - About us: Home/about.md
-  - Single Page 1: single.md
-  - Multi Page 1:
-    - Subpage 1: multi_1/subpage_1.md
-    - Subpage 2: multi_1/subpage_2.md
+  # - Single Page 1: single.md
+  # - Multi Page 1:
+  #   - Subpage 1: multi_1/subpage_1.md
+  #   - Subpage 2: multi_1/subpage_2.md
   - Hugging Face Diffusers:
     - hf_diffusers/index.md
     - Image Generation: hf_diffusers/hf_mnist_gen.md
-    - ECG Generation: hf_diffusers/hf_ecg_gen.md
-  - Resources:
-    - resources/index.md
-    - Slides: resources/slides.md
-    - Further reading: resources/references.md
+  # - Resources:
+  #   - resources/index.md
+  #   - Slides: resources/slides.md
+  #   - Further reading: resources/references.md
 theme:
   favicon: imgs/trace.svg
   name: material
