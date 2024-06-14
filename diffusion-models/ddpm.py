@@ -112,7 +112,16 @@ class DDPM:
         return loss
 
 
-    def train(self,  train_loader, epochs: int = 10):
+    def train(self,  train_loader, epochs: int = 10) -> list[float]:
+        """Train the model
+
+        Args:
+            train_loader (DataLoader): Training data loader
+            epochs (int, optional): Defaults to 10.
+
+        Returns:
+            list: For some reason.
+        """
         losses = []
         for epoch in range(epochs):
             running_loss = 0

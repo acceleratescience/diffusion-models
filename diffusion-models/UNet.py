@@ -92,6 +92,7 @@ class UNetSmol(nn.Module):
         Args:
             input_channels (int, optional): How many channels in image input. Defaults to 1.
             output_channels (int, optional): How many channels in image output. Defaults to 1.
+            block_channels (list, optional): Number of channels in each block. Defaults to [16, 32, 64].
         """
         super().__init__()
         block_1_channels, block_2_channels, block_3_channels = block_channels
@@ -134,7 +135,17 @@ class UNetSmol(nn.Module):
                                             out_features=block_2_channels)
 
 
-    def forward(self, x, t, labels=None):
+    def forward(self, x: torch.Tensor, t: torch.Tensor, labels: torch.Tensor = None) -> torch.Tensor:
+        """Forward pass
+
+        Args:
+            x (torch.Tensor): Input noisey image
+            t (torch.Tensor): Timestep
+            labels (torch.Tensor, optional): Class labels. Defaults to None.
+
+        Returns:
+            torch.Tensor: Predicted noise
+        """
         # Down
         x1, x2 = self.down1(x)
         x3, x4 = self.down2(x2)

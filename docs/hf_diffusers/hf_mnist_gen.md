@@ -36,7 +36,42 @@ model = UNet2DModel(
 6.  The number of classes your dataset has if you are doing conditional generation.
 7.  The number of groups to use for the normalization layer. This is a hyperparameter that you can tune to improve the performance of your model.
 
-There are a number of additional parameters, but these are the most important ones to understand when you are getting started with the `UNet2DModel`. Let's look at the block types in more detail, and some of the additional paramters
+There are a number of additional parameters, but these are the most important ones to understand when you are getting started with the `UNet2DModel`. There are also many different types of blocks that you can use in the `UNet2DModel`, and you can customize the model to suit your needs. For more information on arguments and blocks check out the links below.
+
+Previously, we built all of our components from scratch, but now we can use the `UNet2DModel` to abstract out all of the annoying details of building the model. This allows us to focus on the important parts of our project, such as the parameters for the diffusion process.
+
+## The Schedulers
+To define the schedulers, we use the `DDPMScheduler` and `get_cosine_schedule_with_warmup` functions. The `DDPMScheduler` is a scheduler that is used to schedule the noise level in the diffusion process, and the `get_cosine_schedule_with_warmup` function is used to schedule the learning rate of the optimizer. Essentially, it is possible for the initial training to skew highly towards any strong features that might appear at the start of training, or even worse, towards noise. Warm-up is a technique that helps to mitigate this issue by gradually increasing the learning rate from zero to the desired value over a few steps. This is usually around an epoch or so, but we've reduced it to 50 steps for this example.
+
+```python
+num_epochs = 3
+
+noise_scheduler = DDPMScheduler(num_train_timesteps=200,    # (1)
+                                beta_start = 0.0001,        # (2)
+                                beta_end = 0.02,            # (3)
+                                beta_schedule = 'linear',   # (4)
+                                prediction_type = 'epsilon' # (5)
+                                )
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
+
+num_train_steps = len(train_loader) * epochs
+
+lr_scheduler = get_cosine_schedule_with_warmup(
+    optimizer=optimizer,
+    num_warmup_steps=50,
+    num_training_steps=(num_train_steps),
+)
+```
+
+1.  How many timesteps do we want to include in the diffusion process.
+2.  The starting value of the noise level.
+3.  The ending value of the noise level.
+4.  The schedule for the noise level. We are using a linear schedule, but there are none linear options.
+5.  The type of prediction that we are using. `'epsilon'` means we are predicting the noise level of the diffusion process, but we could also predict the noisy sample using `'sample'` directly.
+
+### The Diffusion Scheduler
+We are using the `DDPMScheduler` and checking out the [documentation for this scheduler](https://huggingface.co/docs/diffusers/en/api/schedulers/ddpm) reveals that we can define things like the beta schedule and the type of predictions we can make. This is not the only scheduler available such as DDIM and Flow-based solvers. For a full list, see the [documentation](https://huggingface.co/docs/diffusers/en/api/schedulers/overview).
+
 
 ## Further reading
 <div class="grid cards" markdown>
