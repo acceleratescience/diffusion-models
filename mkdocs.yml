@@ -78,7 +78,6 @@ plugins:
   - mkdocstrings
   - search
 markdown_extensions:
-  - markdown_grid_tables
   - abbr
   - admonition
   - attr_list
