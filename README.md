@@ -34,9 +34,9 @@
     This one-day works shop is an introduction to diffusion models and how to apply them in a practical way. We talk through the diffusion algorithm as it was introduced in the DDPM paper, and then try to implement it in PyTorch. We then move on to the Diffusers library, which is a high-level library that abstracts out the details of the diffusion algorithm, and allows you to focus on the important parts of your project.
   </p>
   <p align="center">
-    <a href="https://acceleratescience.github.io/diffusion-models/" style="font-size: 20px; text-decoration: none"><strong>Start »</strong></a>
+    <!-- <a href="https://acceleratescience.github.io/diffusion-models/" style="font-size: 20px; text-decoration: none"><strong>Start »</strong></a>
     <br />
-    <br />
+    <br /> -->
     <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/notebooks">Check out the notebooks</a>
     ·
     <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/Slides">Check out the Slides</a>
