@@ -41,3 +41,8 @@ def get_mnist(batch_size: int = 32, path: str = '../data/') -> DataLoader | Data
     test_loader = DataLoader(test_noisy_dataset, batch_size=batch_size, shuffle=True)
 
     return train_loader, test_loader
+
+
+def add_noise(x, noise_factor):
+    noisy_x =  (1-noise_factor)*x + noise_factor * torch.randn(x.size())
+    return noisy_x
