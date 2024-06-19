@@ -1,7 +1,8 @@
 import torch
-import torch.optim as optim
 import torch.nn.functional as F
+import torch.optim as optim
 from tqdm import tqdm
+
 
 class DDPM:
     def __init__(self, model, optimizer, T: int, start: float, end: float, device: torch.device = torch.device('cpu')):
