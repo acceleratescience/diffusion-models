@@ -1,10 +1,11 @@
+import math
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import math
 
 
-class SinudoidBlock(nn.Module):
+class SinusoidBlock(nn.Module):
     def __init__(self, embedding_dim):
         super().__init__()
         self.embedding_dim = embedding_dim
@@ -123,8 +124,7 @@ class UNetSmol(nn.Module):
                                out_channels=output_channels,
                                kernel_size=1)
 
-        self.time_embedder = TimeBlock(in_features=1,
-                                       out_features=block_2_channels)
+        self.time_embedder = SinusoidBlock(embedding_dim=block_2_channels)
         self.time_embedder_1 = TimeBlock(in_features=block_2_channels,
                                          out_features=block_3_channels)
         self.time_embedder_2 = TimeBlock(in_features=block_2_channels,
