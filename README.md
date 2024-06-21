@@ -37,9 +37,9 @@
     <!-- <a href="https://acceleratescience.github.io/diffusion-models/" style="font-size: 20px; text-decoration: none"><strong>Start »</strong></a>
     <br />
     <br /> -->
-    <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/notebooks">Check out the notebooks</a>
+    <a href="https://github.com/acceleratescience/diffusion-models/tree/main/notebooks">Check out the notebooks</a>
     ·
-    <a href="https://github.com/acceleratescience/diffusion-models/tree/main/diffusion-models/Slides">Check out the Slides</a>
+    <a href="https://github.com/acceleratescience/diffusion-models/tree/main/slides">Check out the Slides</a>
     <br />
     <a href="https://github.com/acceleratescience/diffusion-models/issues">Report Bug</a>
     ·
