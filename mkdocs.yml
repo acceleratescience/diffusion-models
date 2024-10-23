@@ -10,14 +10,23 @@ nav:
   - Introduction: Introduction/Introduction.md
   - Physics: Physics/Physics.md
   - Building Blocks:
-    - Building Blocks: BuildingBlocks/building-blocks.md
+    - BuildingBlocks/index.md
     - VAES: BuildingBlocks/1_VAEs.ipynb
+    - Segmentation: BuildingBlocks/segmentation.ipynb
+  - DDPM:
+    - DDPM/index.md
+    - Basic Diffusion: DDPM/4_diffusion.ipynb
+    - Basic Diffusion II: DDPM/5_diffusion_part2.ipynb
+    - Hugging Face Diffusers: DDPM/6_hf_diffusers.ipynb
+  - Ethics:
+    - Ethics/index.md
+    - Case Studies: Ethics/ethics.md
 extra_css:
   - css/custom.css
 theme:
   favicon: imgs/trace.svg
   name: material
-  # custom_dir: overrides
+  custom_dir: overrides
   logo: imgs/trace.svg
   features:
     - toc.integrate
