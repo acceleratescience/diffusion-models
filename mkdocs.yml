@@ -13,14 +13,18 @@ nav:
     - BuildingBlocks/index.md
     - VAES: BuildingBlocks/1_VAEs.ipynb
     - Segmentation: BuildingBlocks/segmentation.ipynb
+    - UNet: BuildingBlocks/3_UNet.ipynb
+    - CLIP: BuildingBlocks/2_CLIP.ipynb
   - DDPM:
     - DDPM/index.md
     - Basic Diffusion: DDPM/4_diffusion.ipynb
     - Basic Diffusion II: DDPM/5_diffusion_part2.ipynb
     - Hugging Face Diffusers: DDPM/6_hf_diffusers.ipynb
+  - Applications and Evaluation: Applications/index.md
   - Ethics:
     - Ethics/index.md
     - Case Studies: Ethics/ethics.md
+  - Open Source Communities: OpenSource/index.md
 extra_css:
   - css/custom.css
 theme:
