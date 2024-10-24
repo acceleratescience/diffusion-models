@@ -96,24 +96,33 @@ class DDPM:
     
 
 
-    def loss_function(self, x_0: torch.Tensor, t: torch.Tensor, label: torch.Tensor) -> torch.Tensor:
+    def loss_function(self, x_0: torch.Tensor, t: torch.Tensor, label: torch.Tensor, return_per_sample: bool = False) -> torch.Tensor:
         """Calculates the MSE loss between the true noise and the predicted noise.
 
         Args:
             x_0 (torch.Tensor): _description_
             t (torch.Tensor): _description_
             label (torch.Tensor): _description_
+            return_per_sample (bool): If True, returns unreduced per-sample losses
 
         Returns:
-            torch.Tensor: _description_
+            torch.Tensor: Either mean loss or per-sample losses depending on return_per_sample
         """
         x_noise, noise = self.forward(x_0, t)
         noise_prediction = self.model(x_noise, t.float(), label)
-        loss = F.mse_loss(noise, noise_prediction)
-        return loss
+        
+        # Calculate MSE loss without reduction
+        per_sample_loss = F.mse_loss(noise, noise_prediction, reduction='none')
+        
+        # Take mean over all dimensions except batch dimension
+        per_sample_loss = per_sample_loss.mean(dim=tuple(range(1, per_sample_loss.dim())))
+        
+        if return_per_sample:
+            return per_sample_loss
+        return per_sample_loss.mean()
 
 
-    def train(self,  train_loader, epochs: int = 10) -> list[float]:
+    def train(self, train_loader, epochs: int = 10) -> tuple[list[float], list[float]]:
         """Train the model
 
         Args:
@@ -121,9 +130,11 @@ class DDPM:
             epochs (int, optional): Defaults to 10.
 
         Returns:
-            list: For some reason.
+            tuple[list[float], list[float]]: Returns (losses, t_values)
         """
         losses = []
+        t_values = []
+        
         for epoch in range(epochs):
             running_loss = 0
             batch_size = train_loader.batch_size
@@ -132,14 +143,19 @@ class DDPM:
                 self.optimizer.zero_grad()
                 t = torch.randint(0, self.T, (batch_size,), device=self.device)
                 t = t.float()
-                loss = self.loss_function(images, t, labels)
-                loss.backward()
+                
+                # Get per-sample losses instead of batch loss
+                loss_per_sample = self.loss_function(images, t, labels, return_per_sample=True)  # You'll need to modify loss_function
+                batch_loss = loss_per_sample.mean()  # For backward pass
+                
+                batch_loss.backward()
                 self.optimizer.step()
 
-                running_loss += loss.item()
-                # print(loss.item())
-                losses.append(loss.item())
+                running_loss += batch_loss.item()
+                # Extend both lists with per-sample values
+                losses.extend(loss_per_sample.detach().cpu().numpy().tolist())
+                t_values.extend(t.cpu().numpy().tolist())
 
             print(f'Epoch [{epoch+1}/{epochs}], Loss: {running_loss/len(train_loader):.4f}')
 
-        return losses
+        return losses, t_values

@@ -6,3 +6,4 @@ docs/.DS_Store
 /ignore
 
 .DS_Store
+__pycache__
