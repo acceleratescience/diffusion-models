@@ -1,6 +1,18 @@
+<a href="https://acceleratescience.github.io/">
+    <img src="./imgs/full_acc.png" alt="Logo" width=500>
+</a>
+
 # Introduction to Diffusion Models
 
+<img src="./imgs/diffusion.webp" alt="Who doesn't love a cat picture" style="width:800px;"/>
+
 Welcome to the Introduction to Diffusion Models workshop offered by the Accelerate Programme for Scientific Discovery. Here you will find the slides for our in-person workshop, along with some material to get started.
+
+This workshop was originally delivered in-person at the University of Cambridge, but we have made the slides and some of the material available here for you to work through at your own pace.
+
+In the main GitHub repository, there is a `notebooks` folder that contains the Jupyter notebooks that we used in the workshop. These notebooks are designed to be run on a local machine, and we recommend that you use a machine with a GPU to run them. If you don't have a GPU, you can use Google Colab to run the notebooks. Contained within the main repository is also a folder `diffusion_models` that contains the code for the Diffusion Models that we build in the workshop.
+
+[:fontawesome-solid-book:  Notebooks ](mailto:accelerate-mle@cst.cam.ac.uk){ .md-button }
 
 This workshop is roughly divided into the following sections:
 
