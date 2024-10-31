@@ -27,6 +27,9 @@ nav:
   - Open Source Communities: OpenSource/index.md
 extra_css:
   - css/custom.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 theme:
   favicon: imgs/trace.svg
   name: material
@@ -100,6 +103,8 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - tables
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
