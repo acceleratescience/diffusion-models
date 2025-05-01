@@ -90,7 +90,7 @@ class DDPM:
             # t = t.float()
             epsilon_t = self.model(x_t, t.float(), labels)
             x_t = self.reverse(x_t, t, epsilon_t)
-            x_ts.append(x_t.detach().numpy())
+            x_ts.append(x_t.cpu().detach().numpy())
 
         return x_ts
     
@@ -141,7 +141,7 @@ class DDPM:
             for images, targets, labels in tqdm(train_loader, desc='Training', total=len(train_loader)):
                 images, targets, labels = images.to(self.device), targets.to(self.device), labels.to(self.device)
                 self.optimizer.zero_grad()
-                t = torch.randint(0, self.T, (batch_size,), device=self.device)
+                t = torch.randint(0, self.T, (images.shape[0],), device=self.device)
                 t = t.float()
                 
                 # Get per-sample losses instead of batch loss
