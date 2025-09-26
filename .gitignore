@@ -1,4 +1,4 @@
-/venv
+venv/
 docs/.DS_Store
 /notebooks/data/
 
@@ -7,3 +7,10 @@ docs/.DS_Store
 
 .DS_Store
 __pycache__
+
+# PyCharm project files
+# These files are machine specific and not useful to developers on VS Code or other editors
+.idea/
+
+# Python package build artifacts
+*.egg-info/
