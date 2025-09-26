@@ -28,7 +28,7 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = []
+packages = ["diffusion_models"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
