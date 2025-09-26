@@ -1,4 +1,4 @@
-/venv
+venv/
 docs/.DS_Store
 /notebooks/data/
 
