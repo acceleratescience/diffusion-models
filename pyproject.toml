@@ -24,6 +24,7 @@ dev = [
   "mkdocs-jupyter>=0.25.1",
   "mkdocs-material>=9.5.44,<10.0.0",
   "mkdocstrings>=0.27.0,<0.28.0",
+  "pre-commit>=4.3.0",
 ]
 
 [tool.setuptools]
