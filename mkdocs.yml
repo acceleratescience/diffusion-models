@@ -7,7 +7,9 @@ nav:
     - The Workshop: Home/workshop.md
     - License: Home/LICENSE.md
     - About us: Home/about.md
-  - Introduction: Introduction/Introduction.md
+  - Introduction:
+    - Introduction: Introduction/Introduction.md
+    - Running Locally: Introduction/running-locally.md
   - Physics: Physics/Physics.md
   - Building Blocks:
     - BuildingBlocks/index.md
