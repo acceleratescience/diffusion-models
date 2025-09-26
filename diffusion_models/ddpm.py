@@ -19,6 +19,8 @@ class DDPM:
         self.optimizer = optimizer
         self.device = device
 
+        self.model.to(self.device)
+
         self.T = T
         self.beta = torch.linspace(start, end, T).to(device)
         alpha = 1. - self.beta
