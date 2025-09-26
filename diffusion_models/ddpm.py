@@ -15,9 +15,9 @@ class DDPM:
             end (float): Largest variance
             device (torch.device, optional): Device. Defaults to torch.device('cpu')
         """
-        self.model = model
         self.optimizer = optimizer
         self.device = device
+        self.model = model.to(self.device)
 
         self.T = T
         self.beta = torch.linspace(start, end, T).to(device)
