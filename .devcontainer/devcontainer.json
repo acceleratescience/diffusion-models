@@ -35,7 +35,7 @@
 		}
 	},
 
-	"postCreateCommand": "./.devcontainer/uv_setup.sh",
+	"postCreateCommand": "./.devcontainer/uv_setup.sh && ./.devcontainer/torch_setup.sh",
 
 	"remoteUser": "vscode",
 
