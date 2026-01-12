@@ -16,6 +16,7 @@ In the main GitHub repository, there is a `notebooks` folder that contains the J
 
 This workshop is roughly divided into the following sections:
 
+
 ## Introduction
 An overview of the Accelerate Programme, and the history of image generation, including VAEs, GANs, and Diffusion
 
