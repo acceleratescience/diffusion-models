@@ -14,3 +14,11 @@ __pycache__
 
 # Python package build artifacts
 *.egg-info/
+
+notes.md
+
+# Office lock files
+~$*.pptx
+
+# Pre-intro slides (these are very large)
+slides/pre_intro/
